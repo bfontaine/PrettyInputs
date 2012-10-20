@@ -25,6 +25,13 @@ $(document).ready(function() {
                 $lab.show();
         });
         
+        // trick used to hide labels if the inputs are filled
+        // by browser’s autocomplete
+        window.setTimeout(function() {
+            if ($inp[0].value !== '') {
+                $lab.hide();
+            }
+        }, 100);
         
     });
          
