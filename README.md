@@ -1,5 +1,5 @@
-PrettyInput
-===========
+PrettyInputs
+============
 
 This is a little script to make some pretty inputs, *à la*
 [Dropbox](//www.dropbox.com/login).
