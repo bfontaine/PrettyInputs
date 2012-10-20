@@ -1,15 +1,11 @@
-body {
-    background-color:#FAFAFA;
-}
-
-.input-field {
+div.input-field {
     position:relative;
     margin:25px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+div.input-field input[type="text"],
+div.input-field input[type="email"],
+div.input-field input[type="password"] {
     border:1px solid #BBB;
     -webkit-border-radius: 10px;
        -moz-border-radius: 10px;
@@ -24,7 +20,7 @@ input[type="password"] {
             box-shadow: inset 0px 2px 10px #DDD;
 }
 
-label {
+div.input-field label {
     position:absolute;
     left:4px;
     margin:0;
@@ -36,20 +32,21 @@ label {
          -o-transition: color 0.2s linear 0;
             transition: color 0.2s linear 0;
 }
-input[type="text"],
-input[type="email"],
-input[type="password"], label {   
+div.input-field input[type="text"],
+div.input-field input[type="email"],
+div.input-field input[type="password"],
+div.input-field label {   
     outline:none;
     padding:10px 5px;
     font-size:1.2em;
     font-family:georgia, serif;
 }
 
-.focused label {
+div.input-field.focused label {
     color:#CCC;
 }
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
+div.input-field input[type="text"]:focus,
+div.input-field input[type="email"]:focus,
+div.input-field input[type="password"]:focus {
     border-color:#AAA;
 }
