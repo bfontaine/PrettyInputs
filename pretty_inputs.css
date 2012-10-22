@@ -20,11 +20,11 @@ div.input-field input[type="password"] {
             box-shadow: inset 0px 2px 10px #DDD;
 }
 
-div.input-field label {
+div.input-field .inset-label {
     position:absolute;
     left:4px;
     margin:0;
-    color:#333;
+    color:#666;
     cursor:text;
     -webkit-transition: color 0.2s linear 0;
        -moz-transition: color 0.2s linear 0;
@@ -35,14 +35,14 @@ div.input-field label {
 div.input-field input[type="text"],
 div.input-field input[type="email"],
 div.input-field input[type="password"],
-div.input-field label {   
+div.input-field .inset-label {   
     outline:none;
     padding:10px 5px;
     font-size:1.2em;
     font-family:georgia, serif;
 }
 
-div.input-field.focused label {
+div.input-field.focused .inset-label {
     color:#CCC;
 }
 div.input-field input[type="text"]:focus,
