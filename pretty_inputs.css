@@ -1,11 +1,11 @@
-div.input-field {
+div[data-input-field] {
     position:relative;
     margin:25px;
 }
 
-div.input-field input[type="text"],
-div.input-field input[type="email"],
-div.input-field input[type="password"] {
+div[data-input-field] input[type="text"],
+div[data-input-field] input[type="email"],
+div[data-input-field] input[type="password"] {
     border:1px solid #BBB;
     -webkit-border-radius: 10px;
        -moz-border-radius: 10px;
@@ -20,7 +20,7 @@ div.input-field input[type="password"] {
             box-shadow: inset 0px 2px 10px #DDD;
 }
 
-div.input-field .inset-label {
+div[data-input-field] [data-inset-label] {
     position:absolute;
     left:4px;
     margin:0;
@@ -32,21 +32,21 @@ div.input-field .inset-label {
          -o-transition: color 0.2s linear 0;
             transition: color 0.2s linear 0;
 }
-div.input-field input[type="text"],
-div.input-field input[type="email"],
-div.input-field input[type="password"],
-div.input-field .inset-label {   
+div[data-input-field] input[type="text"],
+div[data-input-field] input[type="email"],
+div[data-input-field] input[type="password"],
+div[data-input-field] [data-inset-label] {   
     outline:none;
     padding:10px 5px;
     font-size:1.2em;
     font-family:georgia, serif;
 }
 
-div.input-field.focused .inset-label {
+div[data-input-field].focused [data-inset-label] {
     color:#CCC;
 }
-div.input-field input[type="text"]:focus,
-div.input-field input[type="email"]:focus,
-div.input-field input[type="password"]:focus {
+div[data-input-field] input[type="text"]:focus,
+div[data-input-field] input[type="email"]:focus,
+div[data-input-field] input[type="password"]:focus {
     border-color:#AAA;
 }

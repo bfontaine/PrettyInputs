@@ -1,11 +1,11 @@
 $(document).ready(function() {
     
-    var $divs = $('div.input-field');
+    var $divs = $('div[data-input-field]');
 
     $divs.each(function(i,d) {
         
         var $d = $(d),
-            $lab = $('label.inset-label', $d).first(),
+            $lab = $('label[data-inset-label]', $d).first(),
             $inp = $('input#'+$lab.attr('for'), $d).first(),
             addfocus = function() { $d.addClass('focused'); };
         
