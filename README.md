@@ -3,6 +3,12 @@
 This is a little script to make some pretty inputs, *à la*
 [Dropbox](//www.dropbox.com/login).
 
+## Requirements
+
+* IE 8+
+* Firefox 3.5+
+* Chrome 4+
+* Safari 3.1+
 
 ## Usage
 

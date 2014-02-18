@@ -43,7 +43,7 @@ div[data-input-field] [data-inset-label] {
     font-family:georgia, serif;
 }
 
-div[data-input-field].focused [data-inset-label] {
+div[data-input-field].pi_focused [data-inset-label] {
     color:#CCC;
 }
 div[data-input-field] input[type="text"]:focus,

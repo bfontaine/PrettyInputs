@@ -1,38 +1,57 @@
-$(document).ready(function() {
-    
-    var $divs = $('div[data-input-field]');
+;!function() {
 
-    $divs.each(function(i,d) {
+    var ns = function (s) { return 'pi_' + s; }, // namespace a string
+    
+        divs = document.querySelectorAll('div[data-input-field]'),
+        l    = divs.length,
+        i,
         
-        var $d = $(d),
-            $lab = $('label[data-inset-label]', $d).first(),
-            $inp = $('input#'+$lab.attr('for'), $d).first(),
-            addfocus = function() { $d.addClass('focused'); };
-        
-        $inp.focusin(addfocus);
-        $lab.click(addfocus);
-        
-        $inp.focusout(function(){
-            $d.removeClass('focused');
-            
-            if ($inp.val() == '')
-                $lab.show();
-        });
-        
-        $inp.keypress(function() { $lab.hide(); });
-        $inp.keyup(function() {
-            if ($inp.val() == '')
-                $lab.show();
-        });
-        
-        // trick used to hide labels if the inputs are filled
-        // by browser’s autocomplete
-        window.setTimeout(function() {
-            if ($inp[0].value !== '') {
-                $lab.hide();
-            }
-        }, 100);
-        
-    });
-         
-});
+        // helpers
+        addClass = function( el, klass ) {
+            el.className += ' ' + klass;
+        },
+        rmClass  = function( el, klass ) {
+            el.className = el.className.replace(klass, '');
+        },
+        show     = function ( el ) { el.style.visibility = 'visible'; },
+        hide     = function ( el ) { el.style.visibility = 'hidden'; };
+
+    for (i=0; i<l; i++) {
+        (function(div) {
+            var lab = div.querySelector('label[data-inset-label]'),
+                inp = div.querySelector('input#' + lab.getAttribute('for')),
+                addFocus = function() { addClass(div, ns('focused')); };
+
+            inp.addEventListener('focusin', addFocus, false);
+            lab.addEventListener('click', addFocus, false);
+
+            inp.addEventListener('focusout', function() {
+                rmClass(div, ns('focused'));
+
+                if (inp.value == '') {
+                    show(lab);
+                }
+            }, false);
+
+            inp.addEventListener('keypress', function() {
+                hide(lab);
+            }, false);
+
+            inp.addEventListener('keyup', function() {
+                if (inp.value == '') {
+                    show(lab);
+                }
+            }, false);
+
+            // trick used to hide labels if the inputs are filled
+            // by browser’s autocomplete
+            window.setTimeout(function() {
+                if (inp.value !== '') {
+                    hide(lab);
+                }
+            }, 100);
+
+        })(divs[i]);
+    }
+
+}();
